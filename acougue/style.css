@@ -1,0 +1,194 @@
+* {
+    box-sizing: border-box;
+}
+:root{
+    --text-color: #220901;
+    --text-color-special: #621708;
+    --background-color: #941b0c;
+    --background-color-special: #bc3908;
+    --logo-color:#f6aa1c;
+}
+html,body{
+    height: 100%;
+    margin: 0px;
+}
+body{
+    display: grid;
+    grid-template-rows: 50px 1fr 50px;
+    overflow: hidden;
+}
+nav{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 3fr 3fr 3fr 3fr;
+    background-color: var(--logo-color);
+    box-shadow: 0px 0px 2px black inset;
+}
+nav a, nav p{
+    color: var(--text-color);
+    background-color: var(--background-color);
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    text-decoration: none;
+}
+nav a:hover,nav p{
+    color: var(--background-color);
+    background-color: var(--text-color);
+}
+nav img{
+    height: 100%;
+    display: block;
+    margin: auto;
+}
+main{
+    height: calc(100vh - 100px);
+    display: grid;
+    grid-template-columns: 1fr min(100%,1200px) 1fr;
+}
+section.middle{
+    overflow-y: scroll;
+    background-color: var(--text-color-special);
+    padding: 20px;
+    box-shadow: 0px 0px 4px black inset;
+}
+section.side{
+    background-color: var(--background-color-special);
+}
+footer{
+    color: var(--text-color);
+    background-color: var(--background-color);
+    text-align: center;
+    box-shadow: 0px 0px 2px black inset;
+}
+h1{
+    color: var(--logo-color);
+    background-color: var(--text-color);
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    width: min(80%, 1200px);
+    border: solid 2px var(--logo-color);
+    border-radius: 15px;
+    box-shadow: 0px 0px 5px 0px var(--logo-color) inset;
+}
+section.middle > div{
+    width: min(50%, 1000px);
+    color: var(--logo-color);
+    background-color: var(--text-color);
+    border: solid 1px var(--background-color-special);
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+section.products{
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-gap: 20px;
+    padding: 50px;
+}
+div.item{
+    aspect-ratio: 3/4;
+    background-color: var(--background-color-special);
+    border: 4px solid var(--background-color);
+    border-radius: 10px;
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+    overflow: hidden;
+    transition: 300ms;
+}
+div.item:hover{
+    border-color: var(--text-color);
+}
+div.item h2{
+    color: var(--logo-color);
+    background-color: var(--text-color);
+    text-align: center;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+}
+div.item:hover h2{
+    color: var(--text-color);
+    background-color: var(--logo-color);
+}
+div.item img{
+    display: block;
+    margin: auto;
+}
+div.item h3{
+    color: var(--logo-color);
+    background-color: var(--text-color);
+    text-align: center;
+    margin: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 300ms;
+}
+div.item:hover h3{
+    color: var(--text-color);
+    background-color: var(--logo-color);
+}
+
+div.item:nth-child(1){
+    grid-area: 1 / 1 / 3 / 3;
+/*    background-color: green;*/
+}
+div.item:nth-child(2){
+    grid-area: 1 / 5 / 3 / 7;
+/*    background-color: yellow;*/
+}
+div.item:nth-child(3){
+    grid-area: 2 / 3 / 5 / 5;
+/*    background-color: blue;*/
+}
+div.item:nth-child(4){
+    grid-area: 3 / 1 / 6 / 3;
+/*    background-color: purple;*/
+}
+div.item:nth-child(5){
+    grid-area: 3 / 5 / 6 /7;
+/*    background-color: red;*/
+}
+
+form{
+    width: min(calc(600px - 20px), 100%);
+    background-color: var(--logo-color);
+    border: solid 1px var(--text-color);
+    padding: 10px;
+    margin: 40px auto;
+    overflow: hidden;
+}
+form div{
+    display: block;
+    margin: 10px 0px;
+}
+form textarea{
+    display: block;
+    margin: auto;
+    width: min(500px,100%);
+}
+
+form input[type = text],
+form input[type = email]{
+    width: 100%;
+}
+
+form input[type = submit]{
+    display: block;
+    margin: 10px auto;
+}
+
+@media (max-width: 600px){
+    main{
+        grid-template-columns: 0fr 1fr 0fr;
+    }
+}
